@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131</title>
+    <title>WDD 131 – Dynamic Web Fundamentals - Your Name</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Lbartuni Homepage">
+    <meta name="author" content="Claudio Lolkipayang">
+    <link rel="stylesheet" href="week01/styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <script src="week01/scripts/getdates.js" defer></script>
 </head>
 <body>
-    <h1>WDD 131</h1>
+    <header>
+        <h1>WDD 131: Dynamic Web Fundamentals - Claudio Lolkipayang</h1>
+        <nav><ul>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a href=" https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/5?lang=eng">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>      
+        </nav>
+    </header>
+   
+    <main>
+        <section class="about-me">
+            <h2>About Me</h2>
+            <img src="images/profileimage.jpeg" alt="Your Profile Picture" class="profile-image">
+            <p>My name is Claudio Lolkipayang and I am excited to be learning web development. I was born in Marsabit County in Kenya.\n
+                 I live with my wife and four children in Eldoret City Kenya. I am studying nursing at one of the local university.
+                </p>
+            <h3>Eldoret, Uasi Ngishu</h3>
+            <p>Kenya is known for producing world record breakers in Marathon and stipple chase. It is home to Eliud Kipchoge, who broke his own record. \n 
+                It is also famous for the great Wildbeast migration happening from late June through July. It is home to the famous Maasai tribe.</p>
+            <p><img src="images/kenyanflag.png" alt="Flag of Kenya" class="location-flag"></p>
+        </section>
+        <section class="web-resources">
+            <h2>Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://dev.to/">Dev.to Community</a></li>
+                <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
+                <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
+                <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com/">Udemy</a></li>
+                <li><a href="#">Image Placeholder</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Claudio Lbartuni Lolkipayang - Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>
