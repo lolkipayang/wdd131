@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;     
+}
+
+/* mobile **************************/
+header {
+    background-color: #bbb;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px #333;
+}
+
+header,
+main {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: larger;
+}
+
+nav a:hover {
+    text-decoration: underline double;
+    background-color: #eee;
+    color: #000;
+}
+
+.active {
+    color: yellow;
+}
+.navbar {
+    background-color: #5b2c6f;
+    /* Deep purple */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 25px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #e0b0ff;
+    /* Lighter purple on hover */
+}
+
+.content-area {
+    flex-grow: 1;
+    /* Allows the content to expand and push the footer down */
+    max-width: 1000px;
+    /* Limits the content width */
+    margin: 20px auto;
+    /* Centers the content */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Centers the "Home" heading */
+}
+
+.content-area h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive grid */
+    gap: 20px;
+    justify-content: center;
+    /* Center items in the grid */
+    padding: 0 10px;
+    /* Add some padding to the grid */
+}
+
+.image-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    padding-bottom: 10px;
+    /* Space for the text */
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Removes extra space below image */
+}
+
+.image-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #5b2c6f;
+    /* Darker blue from the example */
+    color: white;
+    font-size: 0.8em;
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+/* Larger Views ******************************/
+@media (min-width: 740px) {
+   
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    nav a {
+        flex: 1 1 100%;
+    }
+}
