@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Dynamic Web Fundamentals Claudio Lolkipayang</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Lbartuni Homepage">
+    <meta name="author" content="Claudio Lolkipayang">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>Kenya</header>
+
+    <main>
+        <div class="banner">
+            <picture>
+                <!-- For small screens -->
+                <source srcset="images/lionesses.webp" type="image/webp" media="(max-width: 768px)">
+        
+                <!-- For larger screens -->
+                <img srcset="images/lionesseslying.webp" type="image/webp" class="banner-img">
+            </picture>    
+        </div>
+            <div class="content-box data-box">
+                <div class="title">Data</div>
+                <div class="info">
+                    <p><strong>Area:</strong> 587,041 sq km</p>
+                    <p><strong>Population:</strong> 57,532,493</p>
+                    <p><strong>Capital:</strong> Nairobi</p>
+                    <p><strong>Languages:</strong> Swahili, English</p>
+                    <p><strong>Currency:</strong> Kenyan Shilling</p>
+                    <p><strong>Time Zone:</strong> UTC+3</p>
+                    <p><strong>Calling Code:</strong> +254</p>
+                    <p><strong>Internet TLD:</strong> .ke </p>
+                </div>
+            </div>
+            <div class="content-box weather-box">
+                <div class="title">Weather </div>
+                <img src="images/cloud.svg" alt="Cloudy" class="weather-icon" width="10px" height="10px">
+                <div class="info">
+                    <p><strong>Temperature:</strong> 10 °C</p>
+                    <p><strong>Conditions:</strong> Partly Cloudy</p>
+                    <p><strong>Wind:</strong> 5 km/h</p>
+                    <p><strong>Wind Chill:</strong> 9.8 °C</p>
+                </div>
+            </div>
+
+    </main>
+    
+    <footer>
+    
+        <p>&copy;<span id="year"></span>&#x1F338; Claudio Lbartuni Lolkipayang &#x1F338; Kenya</p>
+        <p>Last Modification: <span id="full"></span></p>
+    </footer>
+
+</body>
+</html>
