@@ -91,7 +91,7 @@ main {
 
 /* Weather Icon (optional style) */
 .weather-icon {
-    width: 24px;
+    width: 50px;
     vertical-align: middle;
     margin-left: 0.5em;
 }
