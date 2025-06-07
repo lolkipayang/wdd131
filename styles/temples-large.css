@@ -1,0 +1,14 @@
+/* Larger Views ******************************/
+@media (min-width: 740px) {
+
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    nav a {
+        flex: 1 1 100%;
+    }
+}
