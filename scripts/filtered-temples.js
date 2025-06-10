@@ -102,45 +102,62 @@ const temples = [
   
 const templeCardsContainer = document.getElementById('temple-cards-container');
 
-temples.forEach(temple => {
-    // Create the main card div
+// Function to create and display a single temple card
+function createTempleCard(temple) {
     const card = document.createElement('div');
-    card.classList.add('temple-card');
+    card.classList.add('temple-card'); // Add a class for styling
 
-    // Create and append the image
-    const img = document.createElement('img');
-    img.src = temple.imageUrl;
-    img.alt = `${temple.templeName} Temple`; // Appropriate alt text
-    img.loading = 'lazy'; // Native lazy loading
-    card.appendChild(img);
+    card.innerHTML = `
+        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+        <h2>${temple.templeName}</h2>
+        <p><strong>Location:</strong> ${temple.location}</p>
+        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+        <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+    `;
+    return card;
+}
 
-    // Create a div for temple information
-    const infoDiv = document.createElement('div');
-    infoDiv.classList.add('temple-info');
+// Function to display temples in the container
+function displayTemples(filteredTemples) {
+    templeCardsContainer.innerHTML = ''; // Clear previous content
+    filteredTemples.forEach(temple => {
+        templeCardsContainer.appendChild(createTempleCard(temple));
+    });
+}
 
-    // Add temple name
-    const name = document.createElement('h2');
-    name.textContent = temple.templeName;
-    infoDiv.appendChild(name);
+// Function to extract the dedication year
+function getDedicationYear(dedicatedString) {
+    // The dedicated string is like "2005, August, 7"
+    const year = parseInt(dedicatedString.split(',')[0].trim());
+    return year;
+}
 
-    // Add location
-    const location = document.createElement('p');
-    location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
-    infoDiv.appendChild(location);
+// Event listener for navigation links/buttons
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial display of all temples when the page loads
+    displayTemples(temples);
 
-    // Add dedicated date
-    const dedicated = document.createElement('p');
-    dedicated.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
-    infoDiv.appendChild(dedicated);
+    document.getElementById('home-link').addEventListener('click', () => {
+        displayTemples(temples);
+    });
 
-    // Add area
-    const area = document.createElement('p');
-    area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} sq ft`; // Format area with commas
-    infoDiv.appendChild(area);
+    document.getElementById('old-link').addEventListener('click', () => {
+        const oldTemples = temples.filter(temple => getDedicationYear(temple.dedicated) < 1900);
+        displayTemples(oldTemples);
+    });
 
-    // Append the info div to the card
-    card.appendChild(infoDiv);
+    document.getElementById('new-link').addEventListener('click', () => {
+        const newTemples = temples.filter(temple => getDedicationYear(temple.dedicated) > 2000);
+        displayTemples(newTemples);
+    });
 
-    // Append the completed card to the container
-    templeCardsContainer.appendChild(card);
+    document.getElementById('large-link').addEventListener('click', () => {
+        const largeTemples = temples.filter(temple => temple.area > 90000);
+        displayTemples(largeTemples);
+    });
+
+    document.getElementById('small-link').addEventListener('click', () => {
+        const smallTemples = temples.filter(temple => temple.area < 10000);
+        displayTemples(smallTemples);
+    });
 });

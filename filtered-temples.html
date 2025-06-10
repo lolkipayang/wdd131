@@ -4,35 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 – Dynamic Web Fundamentals - Claudio Lolkipayang</title>
     <meta name="description" content="Temples Images">
     <meta name="author" content="Claudio Lolkipayang">
     <link rel="stylesheet" href="styles/filtered-temples.css">
-   
-    <script src="scripts/filtered-temples.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
+    <title>WDD 131 – Dynamic Web Fundamentals - Week04</title>
+    <script src="scripts/filtered-temples.js" defer></script>
 </head>
 
 <body>
     <header class="navbar">
         <h1 class="logo">Temple Album</h1>
-        <nav>
+        <nav aria-label="Main Temple Filters">
             <ul>
-                <li><a href="#" class="active" title="Home">Home</a></li>
-                <li><a href="#" title="About Us">Old</a></li>
-                <li><a href="#" title="Service">New</a></li>
-                <li><a href="#" title="History">Large</a></li>
-                <li><a href="#" title="Contact">Small</a></li>
+                <li><a href="#" id="home-link" class="active" title="View all temples">Home</a></li>
+                <li><a href="#" id="old-link" title="View temples built before 1900">Old Temples</a></li>
+                <li><a href="#" id="new-link" title="View temples built after 2000">New Temples</a></li>
+                <li><a href="#" id="large-link" title="View temples larger than 90,000 sq ft">Large Temples</a></li>
+                <li><a href="#" id="small-link" title="View temples smaller than 10,000 sq ft">Small Temples</a></li>
             </ul>
         </nav>
     </header>
     <main class="content">
-        <h2>Home</h2>
         <div id="temple-cards-container">
 
         </div>
