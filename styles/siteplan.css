@@ -1,0 +1,228 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Open Sans for body text */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF8F6;
+    /* Background color: Light Cream */
+    color: #333333;
+    /* Standard Body Text: Very Dark Grey */
+}
+
+/* Header Styles (Navbar) */
+.navbar {
+    background-color: #704214;
+    /* Deep Sepia for header background */
+    color: #FAF8F6;
+    /* Light text for contrast on Deep Sepia */
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    /* Stack on small screens */
+    align-items: center;
+    gap: 1rem;
+    /* Space between logo and nav */
+}
+
+.navbar .logo {
+    font-family: 'Lora', serif;
+    /* Lora for logo (primary heading style) */
+    margin: 0;
+    font-size: 1.8rem;
+    color: #B8860B;
+    /* Muted Gold for the logo text */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+    justify-content: center;
+    gap: 1.5rem;
+    /* Space between navigation items */
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    /* Open Sans for navigation menus */
+    color: #FAF8F6;
+    /* Light text for links on Deep Sepia background */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+    background-color: #B8860B;
+    /* Muted Gold on hover/active (accent for interactive elements) */
+    color: #704214;
+    /* Deep Sepia for text on Muted Gold hover/active */
+}
+
+/* Main Content Area */
+.content {
+    max-width: 960px;
+    /* Max width for content */
+    margin: 2rem auto;
+    /* Center content with margin */
+    padding: 1rem;
+    display: grid;
+    gap: 2rem;
+    /* Space between content sections */
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    /* Lora for all primary and secondary headings */
+    color: #704214;
+    /* Deep Sepia for headings */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #B8860B;
+    /* Muted Gold underline for H1 (accent) */
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #B8860B;
+    /* Muted Gold for secondary headings */
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+    color: #333333;
+    /* Standard body text color */
+    font-family: 'Open Sans', sans-serif;
+    /* Open Sans for paragraphs */
+}
+
+/* Blockquotes */
+blockquote {
+    font-family: 'Lora', serif;
+    /* Lora for blockquotes */
+    color: #704214;
+    /* Deep Sepia for blockquotes */
+    font-style: italic;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 5px solid #B8860B;
+    /* Muted Gold border for emphasis */
+    background-color: rgba(250, 248, 246, 0.5);
+    /* Slightly transparent light background */
+}
+
+/* Specific styling for emphasis within paragraphs (key facts/dates) */
+p strong {
+    color: #B8860B;
+    /* Muted Gold for strong emphasis */
+}
+
+/* Scenarios Navigation (acting as Call-to-Action) */
+#history-cards-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+#history-cards-container ul li a {
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    /* Lora for Call-to-Action text */
+    color: #704214;
+    /* Deep Sepia for scenario links default text */
+    background-color: #FAF8F6;
+    /* Light background for buttons */
+    border: 1px solid #704214;
+    /* Deep Sepia border */
+    padding: 0.7rem 1.2rem;
+    border-radius: 20px;
+    /* Rounded pill shape */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    /* Prevent wrapping inside button */
+}
+
+#history-cards-container ul li a:hover,
+#history-cards-container ul li a.active {
+    background-color: #B8860B;
+    /* Muted Gold on hover/active (accent for interactive elements) */
+    color: #FAF8F6;
+    /* Light text on hover/active */
+    border-color: #B8860B;
+    /* Muted Gold border on hover/active */
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    /* Ensure images are responsive */
+    height: auto;
+    display: block;
+    /* Remove extra space below image */
+    margin: 1rem 0;
+    border: 1px solid #704214;
+    /* Deep Sepia border for images */
+    border-radius: 8px;
+    /* Slightly rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #704214;
+    /* Deep Sepia for footer background */
+    color: #FAF8F6;
+    /* Light text for footer */
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    /* Open Sans for footer text */
+    border-top: 3px solid #B8860B;
+    /* Muted Gold top border */
+}
+
+footer p {
+    margin: 0.5rem 0;
+    color: #FAF8F6;
+    /* Ensure footer text is light */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        /* Row layout for header on wider screens */
+        justify-content: space-between;
+    }
+
+    .navbar nav ul {
+        flex-wrap: nowrap;
+        /* Prevent nav items from wrapping */
+    }
+
+    .content {
+        padding: 2rem;
+    }
+}
