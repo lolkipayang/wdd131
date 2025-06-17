@@ -1,0 +1,37 @@
+/* Custom styles for star rating */
+.star-rating input[type="radio"] {
+    /* Hide the default radio button element */
+    display: none;
+}
+
+.star-rating label {
+    /* Set a larger font size for the stars to make them prominent */
+    font-size: 2.5rem;
+    /* Define the color for unselected stars (a light gray) */
+    color: #cbd5e1;
+    /* Change cursor to pointer to indicate interactivity */
+    cursor: pointer;
+    /* Add a smooth transition for color changes on hover/selection */
+    transition: color 0.2s ease-in-out;
+    /* Provide a small margin to separate stars visually */
+    margin-right: 0.2rem;
+}
+
+/* Style for stars when hovered, and all stars preceding the hovered one */
+.star-rating label:hover,
+.star-rating label:hover~label {
+    /* Change color to yellow on hover to indicate selection possibility */
+    color: #fcd34d;
+}
+
+/* Style for selected stars and all stars preceding the selected one */
+.star-rating input[type="radio"]:checked~label {
+    /* Change color to yellow for selected stars */
+    color: #fcd34d;
+}
+
+/* Ensure Inter font is used for the entire body */
+/* This overrides any default browser font and ensures consistency */
+body {
+    font-family: "Inter", sans-serif;
+}
