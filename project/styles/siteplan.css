@@ -1,228 +1,200 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    /* Open Sans for body text */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #FAF8F6;
-    /* Background color: Light Cream */
-    color: #333333;
-    /* Standard Body Text: Very Dark Grey */
+:root {
+    --forest: #2c5f2d;
+    --sunset: #e67e22;
+    --sand: #f0e3ca;
+    --text-dark: #333333;
+    --light-bg: #fdfaf6;
 }
 
-/* Header Styles (Navbar) */
-.navbar {
-    background-color: #704214;
-    /* Deep Sepia for header background */
-    color: #FAF8F6;
-    /* Light text for contrast on Deep Sepia */
-    padding: 1rem 2rem;
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
-    /* Stack on small screens */
-    align-items: center;
-    gap: 1rem;
-    /* Space between logo and nav */
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+    padding: 1.5em;
+    /* Adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Optional: creates parallax effect on scroll */
+    position: relative;
+    z-index: 0;
+}
+.banner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.navbar .logo {
-    font-family: 'Lora', serif;
-    /* Lora for logo (primary heading style) */
-    margin: 0;
-    font-size: 1.8rem;
-    color: #B8860B;
-    /* Muted Gold for the logo text */
-}
-
-.navbar nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow items to wrap on smaller screens */
-    justify-content: center;
-    gap: 1.5rem;
-    /* Space between navigation items */
-}
-
-.navbar nav ul li a {
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    /* Open Sans for navigation menus */
-    color: #FAF8F6;
-    /* Light text for links on Deep Sepia background */
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar nav ul li a:hover,
-.navbar nav ul li a.active {
-    background-color: #B8860B;
-    /* Muted Gold on hover/active (accent for interactive elements) */
-    color: #704214;
-    /* Deep Sepia for text on Muted Gold hover/active */
-}
-
-/* Main Content Area */
-.content {
-    max-width: 960px;
-    /* Max width for content */
-    margin: 2rem auto;
-    /* Center content with margin */
-    padding: 1rem;
-    display: grid;
-    gap: 2rem;
-    /* Space between content sections */
-}
-
-/* Headings */
-h1,
-h2,
-h3 {
-    font-family: 'Lora', serif;
-    /* Lora for all primary and secondary headings */
-    color: #704214;
-    /* Deep Sepia for headings */
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-h1 {
-    font-size: 2.5rem;
-    border-bottom: 2px solid #B8860B;
-    /* Muted Gold underline for H1 (accent) */
-    padding-bottom: 0.5rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-    color: #B8860B;
-    /* Muted Gold for secondary headings */
-}
-
-/* Paragraphs */
-p {
-    margin-bottom: 1rem;
-    color: #333333;
-    /* Standard body text color */
-    font-family: 'Open Sans', sans-serif;
-    /* Open Sans for paragraphs */
-}
-
-/* Blockquotes */
-blockquote {
-    font-family: 'Lora', serif;
-    /* Lora for blockquotes */
-    color: #704214;
-    /* Deep Sepia for blockquotes */
-    font-style: italic;
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    border-left: 5px solid #B8860B;
-    /* Muted Gold border for emphasis */
-    background-color: rgba(250, 248, 246, 0.5);
-    /* Slightly transparent light background */
-}
-
-/* Specific styling for emphasis within paragraphs (key facts/dates) */
-p strong {
-    color: #B8860B;
-    /* Muted Gold for strong emphasis */
-}
-
-/* Scenarios Navigation (acting as Call-to-Action) */
-#history-cards-container ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 1rem;
-}
-
-#history-cards-container ul li a {
-    text-decoration: none;
-    font-family: 'Lora', serif;
-    /* Lora for Call-to-Action text */
-    color: #704214;
-    /* Deep Sepia for scenario links default text */
-    background-color: #FAF8F6;
-    /* Light background for buttons */
-    border: 1px solid #704214;
-    /* Deep Sepia border */
-    padding: 0.7rem 1.2rem;
-    border-radius: 20px;
-    /* Rounded pill shape */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    /* Prevent wrapping inside button */
-}
-
-#history-cards-container ul li a:hover,
-#history-cards-container ul li a.active {
-    background-color: #B8860B;
-    /* Muted Gold on hover/active (accent for interactive elements) */
-    color: #FAF8F6;
-    /* Light text on hover/active */
-    border-color: #B8860B;
-    /* Muted Gold border on hover/active */
-}
-
-/* Image styles */
-img {
-    max-width: 100%;
-    /* Ensure images are responsive */
-    height: auto;
+/* Ensure images inside picture fill the banner */
+.banner picture,
+.banner-img {
+    width: 100%;
+    height: 100%;
     display: block;
-    /* Remove extra space below image */
-    margin: 1rem 0;
-    border: 1px solid #704214;
-    /* Deep Sepia border for images */
-    border-radius: 8px;
-    /* Slightly rounded corners for images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    position: relative;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #704214;
-    /* Deep Sepia for footer background */
-    color: #FAF8F6;
-    /* Light text for footer */
+header {
+    background-color: var(--forest);
+    color: white;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    font-family: 'Open Sans', sans-serif;
-    /* Open Sans for footer text */
-    border-top: 3px solid #B8860B;
-    /* Muted Gold top border */
+    padding: 1.5em 1em;
+    font-size: 2em;
+    font-weight: bold;
 }
 
-footer p {
-    margin: 0.5rem 0;
-    color: #FAF8F6;
-    /* Ensure footer text is light */
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: var(--sunset);
+    gap: 2rem;
+    padding: 0.5em;
+    margin: 0;
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        /* Row layout for header on wider screens */
-        justify-content: space-between;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    text-decoration: underline;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner picture,
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content Sections */
+main {
+    flex: 1;
+    padding: 1em;
+}
+
+section {
+    background-color: white;
+    border-left: 6px solid var(--forest);
+    padding: 1.5em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tour List Styling */
+#tours li {
+    background-color: var(--sand);
+    border-left: 4px solid var(--forest);
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-top: 1em;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 0.75em;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: var(--forest);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1f4720;
+}
+
+/* Footer */
+footer {
+    background-color: var(--sunset);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .banner {
+        background: none;
+        height: auto;
     }
 
-    .navbar nav ul {
-        flex-wrap: nowrap;
-        /* Prevent nav items from wrapping */
+    .content-box {
+        position: static;
+        max-width: none;
+        width: 100%;
+        margin: 1em auto;
     }
 
-    .content {
-        padding: 2rem;
+    .data-box,
+    .weather-box {
+        margin: 1em auto;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    header {
+        font-size: 1.8em;
     }
 }
