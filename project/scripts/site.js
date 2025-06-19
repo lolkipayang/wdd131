@@ -40,19 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-const today = new Date();
-const options = {
-    month: '2-digit',
-    day: '2-digit',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    second: '2-digit',
-    timeZoneName: 'short' // Added for timezone
-};
 
-full.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
-    "en-US",
-    options
-).format(today)}</span>`;
-year.innerHTML = `<span class="highlight">${today.getFullYear()}</span>`;
+// Update year and last modification time
+document.addEventListener("DOMContentLoaded", () => {
+    // Set current year
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Set last modified date
+    const lastModSpan = document.getElementById("full");
+    if (lastModSpan) {
+        const modDate = new Date(document.lastModified);
+        lastModSpan.textContent = modDate.toLocaleString("en-KE", {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+    }
+});
